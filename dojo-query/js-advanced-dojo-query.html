@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>JS Assignemnt</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<div id="helloWorld"></div>
+
+<script>
+
+$Dojo = ( function( ) {
+	return function(a){
+		console.log("first par: ", a);
+		var el = document.getElementById(a);
+		console.log("element of par", el)
+		return{
+			textChange: function(b){
+				console.log("second par:", b);
+				el.innerHTML = b;
+			}
+		}
+	}
+} ) ( ) ;
+
+
+$Dojo("helloWorld").textChange("Yooo");
+// $Dojo("helloWorld").click(function() { $Dojo.addClass('btn-red') })
+// $Dojo("btn").hover(function(){
+// 				$(this).addClass('btn-hover');
+// 			},
+// 			function(){
+// 				$(this).removeClass('btn-hover');
+// 			})
+
+
+</script>
+	<button type="button" class="btn">Click Button</button>
+	<div class="fly-in"></div>
+</body>
+</html>

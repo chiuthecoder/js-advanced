@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>JS Assignemnt</title>
+
+</head>
+<body>
+<script>
+
+var _ = {
+	map: function(arr, callback){
+		var myArr = [];
+		for (index in arr){
+			var result = callback(arr[index]);
+			if(result){myArr.push(result);}
+		}
+		return myArr;
+	},
+	reduce: function(arr, callback){
+		var myArr = [];
+		for (index in arr){
+			var result = callback(arr[index]);
+			if(result){myArr.push(result);}
+		}
+		return myArr;
+	},
+	find: function(arr, callback){
+		var myArr = [];
+		for (index in arr){
+			var result = callback(arr[index]);
+			if(result){myArr.push(arr[index]);}
+		}
+		return myArr;
+	},
+	filter: function(arr, callback){ 
+		var myArr = [];
+		for (index in arr){
+			var result = callback(arr[index]);
+			if(result){myArr.push(arr[index]);}
+		}
+		return myArr;
+	},
+	reject: function(arr, callback){
+		var myArr = [];
+		for (index in arr){
+			var result = callback(arr[index]);
+			if(result){myArr.push(arr[index]);}
+		}
+		return myArr;
+	}
+}
+//a library with 5 methods!
+var multi = _.map( [1, 2, 3, 4, 5, 6], function(num){ return num * 2; });
+console.log(multi);
+
+var reductions = _.reduce( [1, 2, 3, 4, 5, 6], function(num){ return num - 10; });
+console.log(reductions);
+
+var values = _.find( [1, 2, 3, 4, 5, 6], function(num){	return num == 5; });
+console.log(values);
+
+var evens = _.filter( [1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }); //log [2, 4, 6]
+console.log(evens);
+
+var rejections = _.reject( [1, 2, 3, 4, 5, 6], function(num){	return num % 2 !== 0; });
+console.log(rejections);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>JS Assignemnt</title>
+<link rel="stylesheet" href="style.css">
+<script src="jquery.js"></script>
+<script>
+$(document).ready(function(){
+		$('button.btn').click(
+			function(){
+				$(this).toggleClass('btn-red');
+				callback();
+			}			
+		);
+		$('button.btn').hover(
+			function(){
+				$(this).addClass('btn-hover');
+			},
+			function(){
+				$(this).removeClass('btn-hover');
+			}
+		);
+		//a callback to get content from a different file
+		function callback(){
+			$.get(
+			  'fly-in-content.php',
+			  function(data) {
+			  $('.fly-in').append(data);
+				}
+			);
+		}
+	});
+</script>
+
+</head>
+<body>
+	<button type="button" class="btn">Click Button</button>
+	<div class="fly-in"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>JS Assignemnt</title>
+<link rel="stylesheet" href="style.css">
+<script src="jquery.js"></script>
+</head>
+<body>
+<button class="btn">Stalking Zuck</button>
+<div class="fly-in"></div>
+<script>
+$(document).ready(function(){
+		$('.btn').click(function(){
+			$(this).toggleClass('btn-red'),
+			displayZuck()
+	});
+});
+function displayZuck(data){
+	$.get(
+		'http://graph.facebook.com/4', 
+		function(data){
+			$('.fly-in').append("<p>"+data['first_name']+"</p>");
+		}
+		);
+	
+}
+</script>
+</body>
+</html>
